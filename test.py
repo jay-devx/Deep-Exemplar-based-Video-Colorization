@@ -72,7 +72,7 @@ def colorize_video(opt, input_path, reference_file, output_path, nonlocal_net, c
 
         IA_l = IA_lab[:, 0:1, :, :]
         IA_ab = IA_lab[:, 1:3, :, :]
-        
+
         if I_last_lab_predict is None:
             if opt.frame_propagate:
                 I_last_lab_predict = IB_lab
@@ -129,7 +129,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--frame_propagate", default=False, type=bool, help="propagation mode, , please check the paper"
     )
-    parser.add_argument("--image_size", type=int, default=[216 * 2, 384 * 2], help="the image size, eg. [216,384]")
+    parser.add_argument("--image_size", type=int, default=[720, 1280], help="the image size, eg. [216,384]")
     parser.add_argument("--cuda", action="store_false")
     parser.add_argument("--gpu_ids", type=str, default="0", help="separate by comma")
     parser.add_argument("--clip_path", type=str, default="./sample_videos/clips/v32", help="path of input clips")
